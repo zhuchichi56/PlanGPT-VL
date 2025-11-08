@@ -1,7 +1,7 @@
 # 🏙️ PlanGPT-VL: Enhancing Urban Planning with Domain-Specific Vision-Language Models
 
 **[📄 Paper (EMNLP 2025 Industry Track)](https://aclanthology.org/2025.emnlp-industry.169/)**
-**[🤗 Hugging Face Model Page](https://aclanthology.org/2025.emnlp-industry.169/)**
+**[🤗 Hugging Face Model Page](https://huggingface.co/chichi56/plangpt-VL-10K)**
 
 ---
 
