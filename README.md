@@ -93,6 +93,116 @@ cd PlanGPT-VL
 pip install -r requirements.txt
 ```
 
+### 2️⃣ Code Structure
+
+The codebase is organized into modular components for easy extension and maintenance:
+
+```
+src/
+├── inference/          # VLM Inference Server (vLLM-based)
+│   ├── server.py       # FastAPI inference server
+│   ├── client.py       # Client with load balancing
+│   └── start.py        # Multi-GPU server management
+│
+├── core/               # Core Configuration
+│   ├── prompts.py      # All prompt templates (preserved exactly)
+│   └── config.py       # Configuration management
+│
+├── common/             # Shared Utilities
+│   ├── io_utils.py     # JSON/JSONLINES I/O
+│   ├── image_utils.py  # Image processing
+│   ├── text_utils.py   # Text parsing
+│   └── inference_utils.py  # Batch inference with checkpoints
+│
+├── data_processing/    # Data Generation
+│   ├── question_generator.py   # Question generation
+│   ├── response_generator.py   # Response generation
+│   └── cpt_generator.py        # Critical Point Thinking
+│
+├── filtering/          # Image Filtering
+│   ├── planning_map_filter.py  # Planning map detection
+│   └── resolution_filter.py    # Resolution-based filtering
+│
+├── analysis/           # Analysis & Post-processing
+│   ├── postprocessor.py    # Dataset statistics & visualization
+│   └── caption_refiner.py  # RLAIF-V caption refinement
+│
+└── scripts/            # Entry Point Scripts
+    ├── generate_questions.py
+    ├── generate_responses.py
+    └── filter_images.py
+```
+
+### 3️⃣ Usage Examples
+
+#### Start Inference Server
+
+```bash
+# Single-GPU server
+cd src/inference
+python start.py \
+  --model_path /path/to/Qwen2.5-VL-32B-Instruct \
+  --gpu_ids "0" \
+  --port 8000
+
+# Multi-GPU server (4 GPUs, tensor parallelism)
+python start.py \
+  --model_path /path/to/Qwen2.5-VL-32B-Instruct \
+  --tensor_parallel_size 4 \
+  --gpu_ids "0,1,2,3" \
+  --port 8000
+```
+
+#### Generate Questions
+
+```bash
+cd src
+python -m scripts.generate_questions \
+  --image_dir /path/to/planning_maps \
+  --output questions.json \
+  --batch_size 200
+```
+
+#### Generate Responses
+
+```bash
+cd src
+python -m scripts.generate_responses \
+  --input questions.json \
+  --output responses.json \
+  --mode direct_cpt \
+  --batch_size 200
+```
+
+#### Filter Planning Maps
+
+```bash
+cd src
+python -m scripts.filter_images \
+  --input_dir /path/to/images \
+  --output filtered_results.json \
+  --batch_size 500
+```
+
+#### Programmatic Usage
+
+```python
+# Question Generation
+from data_processing import generate_questions
+from common import process_image_directory
+
+image_paths = process_image_directory("/path/to/images")
+questions = generate_questions(image_paths, batch_size=200)
+
+# Response Generation
+from data_processing import generate_responses
+responses = generate_responses(questions, mode="direct_cpt")
+
+# Filtering
+from filtering import filter_planning_maps
+results = filter_planning_maps(image_paths)
+```
+
 ---
 
 ## 📈 Dataset Summary
