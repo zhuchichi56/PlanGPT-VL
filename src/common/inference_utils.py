@@ -4,17 +4,105 @@ Inference Utilities
 Provides batch inference capabilities with checkpointing support.
 """
 
+import base64
 import os
 from typing import List, Dict, Optional
 from loguru import logger
 
-# Import from inference client
-import sys
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from inference.client import parallel_image_inference
+from litellm import completion
 
 from .io_utils import load_json, save_json
 
+
+def _guess_mime_type(image_path: str) -> str:
+    ext = os.path.splitext(image_path)[1].lower()
+    return {
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".webp": "image/webp",
+        ".bmp": "image/bmp",
+        ".tiff": "image/tiff",
+        ".tif": "image/tiff",
+        ".gif": "image/gif",
+    }.get(ext, "image/jpeg")
+
+
+def _image_to_data_url(image_path: str) -> str:
+    with open(image_path, "rb") as f:
+        content = f.read()
+    mime_type = _guess_mime_type(image_path)
+    encoded = base64.b64encode(content).decode("utf-8")
+    return f"data:{mime_type};base64,{encoded}"
+
+
+def _normalize_api_base(api_base: str) -> str:
+    if not api_base:
+        return api_base
+    normalized = api_base.rstrip("/")
+    if normalized.endswith("/v1"):
+        return normalized
+    return f"{normalized}/v1"
+
+
+def parallel_image_inference(
+    prompts: List[str],
+    image_paths: List[str],
+    max_tokens: int = 256,
+    temperature: float = 0.1,
+    top_p: float = 0.9,
+    server_url: str = "http://localhost:8000",
+    server_urls: Optional[List[str]] = None,
+    model: Optional[str] = None,
+    api_key: Optional[str] = None,
+    system_prompt: str = "You are a helpful assistant."
+) -> List[str]:
+    """Perform image inference via LiteLLM against a vLLM OpenAI-compatible server."""
+    if len(prompts) != len(image_paths):
+        raise ValueError("The number of prompts and image_paths must match.")
+
+    if model is None:
+        model = os.environ.get("VLLM_MODEL") or os.environ.get("MODEL")
+    if not model:
+        raise ValueError("Missing model name. Set VLLM_MODEL or pass model=...")
+
+    if api_key is None:
+        api_key = os.environ.get("LITELLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+
+    env_api_base = os.environ.get("VLLM_API_BASE") or os.environ.get("LITELLM_API_BASE")
+    if server_urls is None and env_api_base:
+        base_urls = [env_api_base]
+    else:
+        base_urls = server_urls or [server_url]
+    if not base_urls:
+        raise ValueError("No server URL provided.")
+
+    results: List[str] = []
+    for idx, (prompt, image_path) in enumerate(zip(prompts, image_paths)):
+        api_base = _normalize_api_base(base_urls[idx % len(base_urls)])
+        messages = [
+            {"role": "system", "content": [{"type": "text", "text": system_prompt}]},
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image_url", "image_url": {"url": _image_to_data_url(image_path)}},
+                    {"type": "text", "text": prompt},
+                ],
+            },
+        ]
+
+        response = completion(
+            model=model,
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            api_base=api_base,
+            api_key=api_key,
+        )
+        results.append(response["choices"][0]["message"]["content"])
+
+    return results
 
 def parallel_image_inference_batch(
     prompt_list: List[str],
@@ -24,7 +112,10 @@ def parallel_image_inference_batch(
     temperature: float = 0.7,
     top_p: float = 0.9,
     max_tokens: int = 4096,
-    server_urls: Optional[List[str]] = None
+    server_urls: Optional[List[str]] = None,
+    model: Optional[str] = None,
+    api_key: Optional[str] = None,
+    system_prompt: str = "You are a helpful assistant."
 ) -> List[str]:
     """
     Batch inference with checkpoint support
@@ -98,7 +189,10 @@ def parallel_image_inference_batch(
                 max_tokens=max_tokens,
                 temperature=temperature,
                 top_p=top_p,
-                server_urls=server_urls
+                server_urls=server_urls,
+                model=model,
+                api_key=api_key,
+                system_prompt=system_prompt
             )
 
             # Update results
@@ -133,7 +227,11 @@ def process_inference(
     params: Optional[List[Dict]] = None,
     batch_size: int = 200,
     output_dir: Optional[str] = None,
-    prompts_dict: Optional[Dict[str, str]] = None
+    prompts_dict: Optional[Dict[str, str]] = None,
+    model: Optional[str] = None,
+    api_key: Optional[str] = None,
+    system_prompt: str = "You are a helpful assistant.",
+    server_urls: Optional[List[str]] = None
 ) -> List[str]:
     """
     Process inference with prompt template
@@ -213,7 +311,11 @@ def process_inference(
                 batch_image_paths,
                 max_tokens=4096,
                 temperature=0.7,
-                top_p=0.9
+                top_p=0.9,
+                server_urls=server_urls,
+                model=model,
+                api_key=api_key,
+                system_prompt=system_prompt
             )
 
             for i, idx in enumerate(pending_indices):

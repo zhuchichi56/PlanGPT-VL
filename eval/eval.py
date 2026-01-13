@@ -4,7 +4,7 @@ import os
 import json
 import base64
 import time
-from openai import OpenAI
+from litellm import completion
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
 from typing import Dict, List, Tuple, Any, Optional, Union
@@ -31,7 +31,6 @@ class ImageEvaluator:
     def __init__(self, api_key: str, api_base: str):
         self.api_key = api_key
         self.api_base = api_base
-        self.client = OpenAI(api_key=api_key, base_url=api_base)
     
     @staticmethod
     def encode_image(image_path: str) -> Tuple[str, str]:
@@ -61,14 +60,15 @@ class ImageEvaluator:
         
         for attempt in range(max_retries):
             try:
-                completion = self.client.chat.completions.create(
+                response = completion(
                     model=model_id,
                     messages=messages,
-                    max_tokens=4096
+                    max_tokens=4096,
+                    api_key=self.api_key,
+                    api_base=self.api_base,
                 )
-                
-                response = completion.choices[0].message.content
-                return response
+
+                return response["choices"][0]["message"]["content"]
             
             except Exception as e:
                 if attempt < max_retries - 1:

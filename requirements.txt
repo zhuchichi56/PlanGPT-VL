@@ -1,0 +1,9 @@
+fire
+litellm
+loguru
+numpy
+opencv-python
+torch
+tqdm
+transformers
+vllm

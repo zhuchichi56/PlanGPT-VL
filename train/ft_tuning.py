@@ -248,55 +248,6 @@ if __name__ == "__main__":
         
     ]
     
-    
-    # output = [
-    #     "/data/zhe/new/llama3-8b-autoevol_0",
-    #     # "/data/zhe/new/llama3-8b-autoevol_1",
-    #     # "/data/zhe/new/llama3-8b-autoevol_2",
-    #     # "/data/zhe/new/llama3-8b-autoevol_3",
-    #     # "/data/zhe/new/llama3-8b-autoevol_4",
-    #     # "/data/zhe/new/llama3-8b-codeclm_iter_0",
-    #     # "/data/zhe/new/llama3-8b-codeclm_iter_1",
-    #     # "/data/zhe/new/llama3-8b-codeclm_iter_2",
-    #     "/data/zhe/new/llama3-8b-codeclm_iter_3",
-    #     # "/data/zhe/new/llama3-8b-codeclm_iter_4 ",
-    #     # "/data/zhe/new/llama3-8b-evol_0",
-    #     # "/data/zhe/new/llama3-8b-evol_1",
-    #     # "/data/zhe/new/llama3-8b-evol_2",
-    #     # "/data/zhe/new/llama3-8b-evol_3",
-    #     # "/data/zhe/new/llama3-8b-evol_4",
-    #     # "/data/zhe/new/llama3-8b-tag_instruct_0",
-    #     # "/data/zhe/new/llama3-8b-tag_instruct_1",
-    #     # "/data/zhe/new/llama3-8b-tag_instruct_2",
-    #     # "/data/zhe/new/llama3-8b-tag_instruct_3",
-    #     # "/data/zhe/new/llama3-8b-tag_instruct_4",
-    #     # "/data/zhe/new/llama3-8b-tree_instruct_0",
-    #     # "/data/zhe/new/llama3-8b-tree_instruct_1",
-    #     # "/data/zhe/new/llama3-8b-tree_instruct_2",
-    #     "/data/zhe/new/llama3-8b-tree_instruct_3",
-    #     # "/data/zhe/new/llama3-8b-tree_instruct_4"
-    # ]
-    
-    
-
-
-    # /home/zhe/data/alpaca_response_longest_5k.json
-
-    # for path in data_path:
-    #     data = load_json(path)
-    #     data = json.loads(data)
-
-    #     new_data = []
-    #     for line in data:
-    #         new_data.append({"instruction": line.get("instruction", "") + "\n" + line.get("input", "") if line.get("input")!= "" else line.get("instruction"),
-    #                          "response": line.get("output")})
-            
-    #     print(len(new_data))
-        
-        
-    #     save_jsonl(new_data, path.split(".")[0] + "_converted.jsonl")
-    
-
     for path in data_path:
         # 3b
         sft([path], "llama2-7b", template="llama2")

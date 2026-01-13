@@ -99,10 +99,9 @@ The codebase is organized into modular components for easy extension and mainten
 
 ```
 src/
-├── inference/          # VLM Inference Server (vLLM-based)
-│   ├── server.py       # FastAPI inference server
-│   ├── client.py       # Client with load balancing
-│   └── start.py        # Multi-GPU server management
+├── inference/          # VLM Inference Server (vLLM server mode)
+│   ├── start_vllm.sh   # vLLM server launcher (single/multi-GPU)
+│   └── README.md       # Inference usage
 │
 ├── core/               # Core Configuration
 │   ├── prompts.py      # All prompt templates (preserved exactly)
@@ -135,22 +134,29 @@ src/
 
 ### 3️⃣ Usage Examples
 
-#### Start Inference Server
+#### Start Inference Server (vLLM serve)
 
 ```bash
 # Single-GPU server
 cd src/inference
-python start.py \
+./start_vllm.sh \
   --model_path /path/to/Qwen2.5-VL-32B-Instruct \
   --gpu_ids "0" \
   --port 8000
 
 # Multi-GPU server (4 GPUs, tensor parallelism)
-python start.py \
+./start_vllm.sh \
   --model_path /path/to/Qwen2.5-VL-32B-Instruct \
   --tensor_parallel_size 4 \
   --gpu_ids "0,1,2,3" \
   --port 8000
+```
+
+Set the model name for LiteLLM clients:
+
+```bash
+export VLLM_MODEL=/path/to/Qwen2.5-VL-32B-Instruct
+export VLLM_API_BASE=http://localhost:8000/v1
 ```
 
 #### Generate Questions
