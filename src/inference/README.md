@@ -41,3 +41,8 @@ export LITELLM_API_KEY=your_key
 
 - `start_vllm.sh` 严格按照项目既有推理参数启动 vLLM（dtype/bfloat16、max_model_len=32768、limit_mm_per_prompt、max_num_batched_tokens、max_num_seqs 等）。
 - 推理调用统一在 `src/common/inference_utils.py` 中通过 LiteLLM 完成。
+
+
+
+
+python test.py --image /home/aiscuser/PlanGPT-VL/src/inference/image.png --question "这张图里有什么？"

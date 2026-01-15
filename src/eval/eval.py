@@ -1,17 +1,18 @@
 
+import argparse
 import re
 import os
 import json
 import base64
 import time
-from litellm import completion
+from openai import OpenAI
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
 from typing import Dict, List, Tuple, Any, Optional, Union
 from loguru import logger
 
-# API_KEY = "Your API KEY"
-# API_BASE = "Your API KEY"
+DEFAULT_BASE_URL = "http://localhost:8081/v1"
+DEFAULT_MODEL = "gpt-4o-mini"
 
 def load_json(file_path: str) -> List[Dict[str, Any]]:
     if not os.path.exists(file_path):
@@ -29,8 +30,7 @@ def save_json(data: List[Dict[str, Any]], file_path: str) -> None:
 
 class ImageEvaluator:
     def __init__(self, api_key: str, api_base: str):
-        self.api_key = api_key
-        self.api_base = api_base
+        self.client = OpenAI(api_key=api_key, base_url=api_base)
     
     @staticmethod
     def encode_image(image_path: str) -> Tuple[str, str]:
@@ -60,15 +60,13 @@ class ImageEvaluator:
         
         for attempt in range(max_retries):
             try:
-                response = completion(
+                response = self.client.chat.completions.create(
                     model=model_id,
                     messages=messages,
                     max_tokens=4096,
-                    api_key=self.api_key,
-                    api_base=self.api_base,
                 )
 
-                return response["choices"][0]["message"]["content"]
+                return response.choices[0].message.content or ""
             
             except Exception as e:
                 if attempt < max_retries - 1:
@@ -129,7 +127,7 @@ class ImageEvaluator:
 
 
 class EvaluationProcessor:
-    def __init__(self, api_key: str, api_base: str, model: str = "gpt-4o-mini"):
+    def __init__(self, api_key: str, api_base: str, model: str = DEFAULT_MODEL):
         self.evaluator = ImageEvaluator(api_key, api_base)
         self.model = model
     
@@ -257,25 +255,40 @@ class EvaluationProcessor:
         df.to_csv(csv_path, index=False)
 
 
-def main():
-    api_key = API_KEY
-    api_base = API_BASE
-    json_paths = [
-        "results_planvlm3/question_results_5_13_top1000_answers_cot_merged_wo_type_results_310.json",
-        "results_planvlm3/basic_sft_cot_7k_absolute_path_results_310.json",
-        "results_planvlm3/Qwen2-VL-7B-Instruct_results_310.json",
-        "results_planvlm3/question_results_results_310.json"
-    ]
-    
-    image_base_dir = "data"
-    max_workers = 64
-    model = "gpt-4o-mini"
-    
-    processor = EvaluationProcessor(api_key, api_base, model)
-    results = processor.process_dataset(json_paths, image_base_dir, max_workers, save_path="eval_with_critical_points")
-    
+def main() -> Dict[str, List[Dict[str, Any]]]:
+    parser = argparse.ArgumentParser(description="Evaluate VQA results with proxy.")
+    parser.add_argument("--api-key", default=os.getenv("OPENAI_API_KEY", "dummy"))
+    parser.add_argument("--api-base", default=os.getenv("OPENAI_BASE_URL", DEFAULT_BASE_URL))
+    parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument("--json-paths", nargs="*", default=None)
+    parser.add_argument("--image-base-dir", default="images")
+    parser.add_argument("--max-workers", type=int, default=64)
+    parser.add_argument("--save-path", default="eval_with_critical_points")
+    args = parser.parse_args()
+
+    if args.json_paths is None or len(args.json_paths) == 0:
+        default_json = "planbench-subset.json"
+        if os.path.exists(default_json):
+            json_paths = [default_json]
+        else:
+            json_paths = [
+                "results_planvlm3/question_results_5_13_top1000_answers_cot_merged_wo_type_results_310.json",
+                "results_planvlm3/basic_sft_cot_7k_absolute_path_results_310.json",
+                "results_planvlm3/Qwen2-VL-7B-Instruct_results_310.json",
+                "results_planvlm3/question_results_results_310.json",
+            ]
+    else:
+        json_paths = args.json_paths
+
+    processor = EvaluationProcessor(args.api_key, args.api_base, args.model)
+    results = processor.process_dataset(
+        json_paths,
+        args.image_base_dir,
+        args.max_workers,
+        save_path=args.save_path,
+    )
+
     print("\nEvaluation completed!")
-    
     return results
 
 
