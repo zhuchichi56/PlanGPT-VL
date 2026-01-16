@@ -1,0 +1,11 @@
+2026-01-15
+- Added InferenceParams dataclass controls for inference max_workers and empty-response retries.
+- Implemented true parallel requests via ThreadPoolExecutor in tools.inference_utils.parallel_image_inference.
+- Added retry for empty responses to reduce CPT empty outputs.
+- Suppressed Pydantic serialization warnings globally in tools.inference_utils.
+- Extended tools.run_pipeline CLI to accept inference parameters and wire them into PipelineConfig.
+- Added broader warning filters for Pydantic serializer warnings in tools.inference_utils and tools.run_pipeline.
+- Treat whitespace-only responses as empty and retry accordingly.
+- Removed batch/checkpoint inference helpers; pipeline now uses direct parallel_image_inference.
+- Simplified pipeline and filtering to remove batch size parameters.
+- Updated benchmark script and README to reflect non-batch API.

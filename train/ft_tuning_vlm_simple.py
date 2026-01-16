@@ -1,395 +1,246 @@
+import argparse
+import json
+import os
 import subprocess
+from pathlib import Path
+
 from loguru import logger
-import os
-import json
-import json
-import os
-from collections import defaultdict
-import random
-random.seed(42)
 
-gpus = ["0", "1","2","3"]
-os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(gpus)
+SCRIPT_DIR = Path(__file__).resolve().parent
+DATA_DIR = SCRIPT_DIR / "data"
+DATA_INFO = DATA_DIR / "dataset_info.json"
 
-def load_json(data_path):
-    with open(data_path, "r") as f:
-        data = json.load(f)
-    return data
 
-def load_jsonl(data_path):
-    with open(data_path, "r") as f:
-        data = [json.loads(line) for line in f]
-    return data
-def save_json(data, data_path):
-    with open(data_path, "w") as f:
+def load_json(data_path: str) -> list[dict]:
+    with open(data_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_json(data: list[dict], data_path: str) -> None:
+    with open(data_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Save to {data_path}")
 
-def save_jsonl(data, data_path):
-    with open(data_path, "w") as f:
-        for line in data:
-            f.write(json.dumps(line, ensure_ascii=False) + "\n")
-    print(f"Save to {data_path}")
-    
-    
-def check_images(input_file):
-    from tqdm import tqdm
-    import os
-    
+
+def update_dataset_info(dataset_name: str, file_name: str, ranking: bool) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if DATA_INFO.exists():
+        with open(DATA_INFO, "r", encoding="utf-8") as f:
+            dataset_info = json.load(f)
+    else:
+        dataset_info = {}
+
+    entry = {
+        "file_name": file_name,
+        "formatting": "sharegpt",
+        "columns": {
+            "messages": "messages",
+            "images": "images",
+        },
+        "tags": {
+            "role_tag": "role",
+            "content_tag": "content",
+            "user_tag": "user",
+            "assistant_tag": "assistant",
+            "system_tag": "system",
+        },
+    }
+    if ranking:
+        entry["ranking"] = True
+        entry["columns"].update({"chosen": "chosen", "rejected": "rejected"})
+
+    dataset_info[dataset_name] = entry
+
+    with open(DATA_INFO, "w", encoding="utf-8") as f:
+        json.dump(dataset_info, f, ensure_ascii=False, indent=2)
+
+
+def convert_sft(input_file: str, output_file: str, question_key: str, response_key: str, image_key: str) -> None:
     input_data = load_json(input_file)
-    images_check = []
-    for item in input_data:
-        image_path = item.get("image", "") or item.get("images", [])[0]
-        if image_path:
-            images_check.append(image_path)
-    print(f"Total images to check: {len(images_check)}")
-    
-    to_check = list(set(images_check))
-    print(f"Unique images to check: {len(to_check)}")
-    
-    images_not_found = []
-    for image_path in tqdm(to_check, desc="Checking images"):
-        # 使用os.path.exists进行快速检查，比打开图片更高效
-        if not os.path.exists(image_path):
-            images_not_found.append(image_path)
-            print(f"Image not found: {image_path}")
-            continue
-            
-        # 只对存在的文件尝试打开，验证是否为有效图片
-        try:
-            from PIL import Image
-            Image.open(image_path).verify()  # 使用verify()而不是完全加载图片
-        except Exception as e:
-            print(f"Error validating image {image_path}: {e}")
-            images_not_found.append(image_path)
-    
-    print(f"Images not found or invalid: {len(images_not_found)}")
-    return images_not_found
-            
-
-
-            
-            
-def convert_format(input_file, output_file, question_key="question", response_key="response"):
-    """
-    Convert from the original format to the target format with multiple messages and images,
-    grouping conversations by image.
-    """
-    input_data = load_json(input_file)
-    # check_images(input_file)
-    
-    
-    # Group data by image paths
-    image_groups = defaultdict(list)
-    
-    for item in input_data:
-        # Skip if question or answer is empty
-        if not item.get(question_key, "").strip() or not item.get(response_key, "").strip():
-            continue
-            
-        image_path = item.get("image", "")
-        # Group by image path (use "no_image" as key if no image)
-        key = image_path if image_path else "no_image"
-        image_groups[key].append(item)
-        
-    # 对每一轮对话的顺序都随机
-    for key in image_groups:
-        random.shuffle(image_groups[key])
-        
-    
-    
-    
     output_data = []
-    
-    # Process each image group as a conversation
-    for image_path, items in image_groups.items():
-        messages = []
-        images = []
-        
-        # Only add image to the images list if it's a real image path
-        if image_path != "no_image":
-            images.append(image_path)
-        
-        first_item = True
-        for item in items:
-            if first_item and image_path != "no_image":
-                user_content = f"<image>{item[question_key]}"
-                first_item = False
-            else:
-                # For subsequent items with the same image, don't repeat the image tag
-                user_content = item[question_key]
-            
-            # Add user message
-            messages.append({
-                "content": user_content,
-                "role": "user"
-            })
-            
-            # Add assistant message
-            messages.append({
-                "content": item[response_key],
-                "role": "assistant"
-            })
-        
-        # Create the new format item
-        new_item = {
-            "messages": messages,
-            "images": images
-        }
-        
-        output_data.append(new_item)
-        
-    # output_data = random.sample(output_data,500)
-    
-    # Create output directory if it doesn't exist
-    os.makedirs(os.path.dirname(output_file) or '.', exist_ok=True)
-    save_json(output_data, output_file)
-    print(f"Conversion complete:")
-    print(f"  Processed {len(input_data)} items")
-    print(f"  Created {len(output_data)} conversations")
-    print(f"  Output saved to {output_file}")
-    print(output_data[0])
-    
 
-# def convert_format_single(input_file, output_file):
-#     """
-#     Convert from the original format to the target format with multiple messages and images,
-#     grouping conversations by image.
-#     """
-#     input_data = load_json(input_file)
-#     output_data = []
-    
-#     for item in input_data:
-        
-#         messages = []
-#         images = []    
-        
-#         user_content = f"<image>请你仔细描述这张规划图"
-#         response = item["caption"]["caption"]
-        
-#         messages.append({
-#             "content": user_content,
-#             "role": "user"
-#         })
-#         messages.append({
-#             "content": response,
-#             "role": "assistant"
-#         })
-#         # Only add image to the images list if it's a real image path
-#         image_path = item.get("image", "")
-#         if image_path:
-#             images.append(image_path)
-#         # Create the new format item
-#         new_item = {
-#             "messages": messages,
-#             "images": images
-#         }
-#         output_data.append(new_item)
-    
-    
-#     # Create output directory if it doesn't exist
-#     os.makedirs(os.path.dirname(output_file) or '.', exist_ok=True)
-#     save_json(output_data, output_file)
-#     print(f"Conversion complete:")
-#     print(f"  Processed {len(input_data)} items")
-#     print(f"  Created {len(output_data)} conversations")
-#     print(f"  Output saved to {output_file}")
-#     print(output_data[0])
+    for item in input_data:
+        question = str(item.get(question_key, "")).strip()
+        response = str(item.get(response_key, "")).strip()
+        if not question or not response:
+            continue
 
-def combine_data(data_path1 , data_path2, output_file):
-    data1 = load_json(data_path1)
-    data2 = load_json(data_path2)
-    print("data1", len(data1))
-    print("data2", len(data2))
-    output_data = data1 + data2
-    import random
-    random.shuffle(output_data)
-    print(f"Length of combined data: {len(output_data)}")
+        image_path = item.get(image_key, "")
+        messages = [
+            {"content": f"<image>{question}", "role": "user"},
+            {"content": response, "role": "assistant"},
+        ]
+        images = [image_path] if image_path else []
+        output_data.append({"messages": messages, "images": images})
+
     save_json(output_data, output_file)
 
-# show
-# def run_bash_script(model_name_or_path, 
-#                     data_path, 
-#                     output_dir, 
-#                     template="qwen2_vl",
-#                     finetuning_type="full",
-#                     freeze_vision_tower="true",
-#                     freeze_multi_modal_projector="false",
-#                     freeze_language_model="false",
-#                     learning_rate=2e-5,
-#                     num_train_epochs=3):
-#     logger.info(f"Finetuning model {model_name_or_path} with template {template}")
-#     logger.info(f"Convert format from {data_path} to {output_dir}")
-#     logger.info(f"Length of data: {len(load_json(data_path))}")
-#     # convert_format(data_path, "data/selected_data_vlm.json")
-    
-#     convert_format(data_path, "data/selected_data_vlm1.json")
-#     domain_path = "data/selected_data_vlm1.json"
-#     general_path = "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/ShareGPT4V/coco_items_5k_train2017_converted.json"
-#     combine_data(domain_path, general_path, "data/selected_data_vlm.json")
-#     check_images("data/selected_data_vlm.json")
-    
-#     bash_command = [
-#         "bash", "ft_vl_new.sh",  # Changed script name to ft_vl.sh for VL models
-#         "--model_name_or_path", model_name_or_path,
-#         "--dataset", "SELECTED_DATA_VLM",
-#         "--output_dir", output_dir,
-#         "--template", template,
-#         "--device", ",".join(gpus),
-#         "--finetuning_type", finetuning_type,
-#         "--freeze_vision_tower", freeze_vision_tower,
-#         "--freeze_multi_modal_projector", freeze_multi_modal_projector,
-#         "--freeze_language_model", freeze_language_model,
-#         "--learning_rate", str(learning_rate),
-#         "--num_train_epochs", str(num_train_epochs)
-#     ]
-#     subprocess.run(bash_command)
 
-def run_bash_script(model_name_or_path, 
-                    data_path, 
-                    output_dir, 
-                    template="qwen2_vl",
-                    finetuning_type="full",
-                    freeze_vision_tower="true",
-                    freeze_multi_modal_projector="true",
-                    freeze_language_model="false",
-                    learning_rate=2e-5,
-                    num_train_epochs=3):
-    logger.info(f"Finetuning model {model_name_or_path} with template {template}")
-    logger.info(f"Convert format from {data_path} to {output_dir}")
-    logger.info(f"Length of data: {len(load_json(data_path))}")
-    
-    # convert_format_single(data_path, "data/selected_data_vlm.jsonl")
-    
-    convert_format(data_path, "data/selected_data_vlm.json")
-    # data = load_json(data_path)
-    # save_json(data, "data/selected_data_vlm.jsonl")
-    
-    
-    bash_command = [
-        "bash", "ft_vl_new.sh",  # Changed script name to ft_vl.sh for VL models
-        "--model_name_or_path", model_name_or_path,
-        "--dataset", "SELECTED_DATA_VLM",
-        "--output_dir", output_dir,
-        "--template", template,
-        "--device", ",".join(gpus),
-        "--finetuning_type", finetuning_type,
-        "--freeze_vision_tower", freeze_vision_tower,
-        "--freeze_multi_modal_projector", freeze_multi_modal_projector,
-        "--freeze_language_model", freeze_language_model,
-        "--learning_rate", str(learning_rate),
-        "--num_train_epochs", str(num_train_epochs)
-    ]
-    subprocess.run(bash_command)
+def convert_dpo(
+    input_file: str,
+    output_file: str,
+    question_key: str,
+    good_key: str,
+    bad_key: str,
+    image_key: str,
+) -> None:
+    input_data = load_json(input_file)
+    output_data = []
 
+    for item in input_data:
+        question = str(item.get(question_key, "")).strip()
+        good_resp = str(item.get(good_key, "")).strip()
+        bad_resp = str(item.get(bad_key, "")).strip()
+        if not question or not good_resp or not bad_resp:
+            continue
 
-
-
-def sft_vl_experiment(data_paths, base_model):
-    assert base_model in ["qwen2-vl-7b", "qwen2-vl-2b", "qwen25-vl-7b", "qwen25-vl-3b"], f"Model {base_model} not found in model_base_path"
-    
-    model_base_path = {
-        "qwen2-vl-7b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2-VL-7B-Instruct",
-        "qwen2-vl-2b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2-VL-2B-Instruct",
-        "qwen25-vl-7b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2.5-7B-instruct",
-        "qwen25-vl-3b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2.5-3B-instruct",
-    }
-    
-    ft_model_path = model_base_path[base_model]
-    
-    # 实验参数组合
-    finetuning_types = ["lora", "full"]
-    freeze_combinations = [
-        # projector only
-        {"vision_tower": "true", "multi_modal_projector": "false", "language_model": "true"},
-        # llm only
-        {"vision_tower": "true", "multi_modal_projector": "true", "language_model": "false"},
-        # projector + llm
-        {"vision_tower": "true", "multi_modal_projector": "false", "language_model": "false"}
-    ]
-    epochs = [1]
-    learning_rates = ["2e-5"]
-     # learning_rates = [ "1e-6", "2e-7","2e-5"]
-    
-    
-    for path in data_paths:
-        name = path.split("/")[-1].split(".")[0]
-    
-        
-        for ft_type in finetuning_types:
-            for freeze in freeze_combinations:
-                for epoch in epochs:
-                    for lr in learning_rates:
-                        # 构建输出路径，包含实验参数
-                        freeze_str = "v{}_p{}_l{}".format(
-                            "f" if freeze["vision_tower"] == "true" else "t",
-                            "f" if freeze["multi_modal_projector"] == "true" else "t",
-                            "f" if freeze["language_model"] == "true" else "t"
-                        )
-                        
-                        ft_output_dir = f"/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/vlm_train/{base_model}/{name}/{ft_type}_{freeze_str}_ep{epoch}_lr{lr}"
-                        logger.info(f"Finetuning model {base_model} with data {path}, type: {ft_type}, freeze: {freeze_str}, epochs: {epoch}, learning_rate: {lr}")
-                        
-                        run_bash_script(
-                            model_name_or_path=ft_model_path,
-                            data_path=path,
-                            output_dir=ft_output_dir,
-                            template="qwen2_vl",
-                            finetuning_type=ft_type,
-                            freeze_vision_tower=freeze["vision_tower"],
-                            freeze_multi_modal_projector=freeze["multi_modal_projector"],
-                            freeze_language_model=freeze["language_model"],
-                            num_train_epochs=str(epoch),
-                            learning_rate=lr
-                        )
-
-
-
-
-
-def sft_vl(data_paths, base_model, freeze_projector="true"):
-    assert base_model in ["qwen2-vl-7b", "qwen2-vl-2b", "qwen25-vl-7b", "qwen25-vl-3b"], f"Model {base_model} not found in model_base_path"
-    
-    model_base_path = {
-        "qwen2-vl-7b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2-VL-7B-Instruct",
-        "qwen2-vl-2b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2-VL-2B-Instruct",
-        "qwen25-vl-7b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2.5-7B-instruct",
-        "qwen25-vl-3b": "/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/huggingface_model/Qwen2.5-3B-instruct",
-    }
-    
-    ft_model_path = model_base_path[base_model]
-    
-    
-    for path in data_paths:
-        name = path.split("/")[-1].split(".")[0]
-        ft_output_dir = f"/HOME/sustc_ghchen/sustc_ghchen_4/HDD_POOL/vlm_train/{base_model}/{name}_freeze_projector_{freeze_projector}_500"
-        logger.info(f"Finetuning model {base_model} with data {path}")
-    
-        run_bash_script(
-            model_name_or_path=ft_model_path,
-            data_path=path,
-            output_dir=ft_output_dir,
-            template="qwen2_vl",
-            freeze_multi_modal_projector=freeze_projector
+        image_path = item.get(image_key, "")
+        messages = [{"content": f"<image>{question}", "role": "user"}]
+        chosen = {"content": good_resp, "role": "assistant"}
+        rejected = {"content": bad_resp, "role": "assistant"}
+        images = [image_path] if image_path else []
+        output_data.append(
+            {
+                "messages": messages,
+                "chosen": chosen,
+                "rejected": rejected,
+                "images": images,
+            }
         )
-        
 
-if __name__ == "__main__":    
-    data_path = [
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/planvlmcore/results/question_results_5_13_top1000_answers_cot_merged_wo_type.json"
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/image_caption_caption_results_1000.json"
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000.json"
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000.json",
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/question_results_5_13_top1000_answers_cpt_v2.json" # 第一次用cpt
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000_1.json",
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000_qwen32.json",
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000_qwen32_long.json"
-        # "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000_qwen32_long.json"
-        "/HOME/sustc_ghchen/sustc_ghchen_4/PlanVLM-SFT-DATA/final_results_1000_qwen32_long_wo_caption.json"
+    save_json(output_data, output_file)
+
+
+def run_sft(
+    dataset_name: str,
+    model_name_or_path: str,
+    output_dir: str,
+    template: str,
+    device: str,
+) -> None:
+    cmd = [
+        "bash",
+        str(SCRIPT_DIR / "ft_vl.sh"),
+        "--model_name_or_path",
+        model_name_or_path,
+        "--dataset",
+        dataset_name,
+        "--output_dir",
+        output_dir,
+        "--template",
+        template,
+        "--device",
+        device,
     ]
-    
-    
-    sft_vl(data_path, "qwen2-vl-7b", freeze_projector="true")
-    
-    
+    subprocess.run(cmd, check=True, cwd=str(SCRIPT_DIR))
 
+
+def run_dpo(
+    dataset_name: str,
+    model_name_or_path: str,
+    output_dir: str,
+    template: str,
+    device: str,
+    finetuning_type: str | None,
+    freeze_vision_tower: str | None,
+    freeze_multi_modal_projector: str | None,
+    freeze_language_model: str | None,
+    global_batch_size: str | None,
+) -> None:
+    cmd = [
+        "bash",
+        str(SCRIPT_DIR / "dpo_vl.sh"),
+        "--model_name_or_path",
+        model_name_or_path,
+        "--dataset",
+        dataset_name,
+        "--output_dir",
+        output_dir,
+        "--template",
+        template,
+        "--device",
+        device,
+    ]
+    if finetuning_type:
+        cmd += ["--finetuning_type", finetuning_type]
+    if freeze_vision_tower:
+        cmd += ["--freeze_vision_tower", freeze_vision_tower]
+    if freeze_multi_modal_projector:
+        cmd += ["--freeze_multi_modal_projector", freeze_multi_modal_projector]
+    if freeze_language_model:
+        cmd += ["--freeze_language_model", freeze_language_model]
+    if global_batch_size:
+        cmd += ["--global_batch_size", global_batch_size]
+
+    subprocess.run(cmd, check=True, cwd=str(SCRIPT_DIR))
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="VLM SFT/DPO entrypoint")
+    subparsers = parser.add_subparsers(dest="stage", required=True)
+
+    sft_parser = subparsers.add_parser("sft", help="Run SFT with local JSON data")
+    sft_parser.add_argument("--input", required=True, help="Input JSON file")
+    sft_parser.add_argument("--output_dir", required=True, help="SFT output directory")
+    sft_parser.add_argument("--model_name_or_path", required=True)
+    sft_parser.add_argument("--template", default="qwen2_vl")
+    sft_parser.add_argument("--device", default=os.getenv("CUDA_VISIBLE_DEVICES", "0"))
+    sft_parser.add_argument("--dataset_name", default="selected_data_vlm")
+    sft_parser.add_argument("--question_key", default="question")
+    sft_parser.add_argument("--response_key", default="response")
+    sft_parser.add_argument("--image_key", default="image")
+
+    dpo_parser = subparsers.add_parser("dpo", help="Run DPO with local JSON data")
+    dpo_parser.add_argument("--input", required=True, help="Input JSON file")
+    dpo_parser.add_argument("--output_dir", required=True, help="DPO output directory")
+    dpo_parser.add_argument("--model_name_or_path", required=True)
+    dpo_parser.add_argument("--template", default="qwen2_vl")
+    dpo_parser.add_argument("--device", default=os.getenv("CUDA_VISIBLE_DEVICES", "0"))
+    dpo_parser.add_argument("--dataset_name", default="selected_data_vlm_dpo")
+    dpo_parser.add_argument("--question_key", default="question")
+    dpo_parser.add_argument("--good_key", default="good_response")
+    dpo_parser.add_argument("--bad_key", default="bad_response")
+    dpo_parser.add_argument("--image_key", default="image")
+    dpo_parser.add_argument("--finetuning_type")
+    dpo_parser.add_argument("--freeze_vision_tower")
+    dpo_parser.add_argument("--freeze_multi_modal_projector")
+    dpo_parser.add_argument("--freeze_language_model")
+    dpo_parser.add_argument("--global_batch_size")
+
+    args = parser.parse_args()
+
+    if args.stage == "sft":
+        output_file = f"{args.dataset_name}.json"
+        output_path = str(DATA_DIR / output_file)
+        convert_sft(args.input, output_path, args.question_key, args.response_key, args.image_key)
+        update_dataset_info(args.dataset_name, output_file, ranking=False)
+        logger.info("SFT dataset ready at {}", output_path)
+        run_sft(args.dataset_name, args.model_name_or_path, args.output_dir, args.template, args.device)
+    else:
+        output_file = f"{args.dataset_name}.json"
+        output_path = str(DATA_DIR / output_file)
+        convert_dpo(
+            args.input,
+            output_path,
+            args.question_key,
+            args.good_key,
+            args.bad_key,
+            args.image_key,
+        )
+        update_dataset_info(args.dataset_name, output_file, ranking=True)
+        logger.info("DPO dataset ready at {}", output_path)
+        run_dpo(
+            args.dataset_name,
+            args.model_name_or_path,
+            args.output_dir,
+            args.template,
+            args.device,
+            args.finetuning_type,
+            args.freeze_vision_tower,
+            args.freeze_multi_modal_projector,
+            args.freeze_language_model,
+            args.global_batch_size,
+        )
+
+
+if __name__ == "__main__":
+    main()

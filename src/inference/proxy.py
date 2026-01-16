@@ -232,8 +232,9 @@ async def health():
 
 if __name__ == "__main__":
     uvicorn.run(
-        app,
+        "proxy:app",  # 改为导入字符串
         host="0.0.0.0",
         port=8081,
+        workers=150,
         log_level="info"
     )

@@ -1,0 +1,32 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>Describe the image in one short sentence."
+      },
+      {
+        "role": "assistant",
+        "content": "A street scene with visible signs and vehicles."
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>What is the dominant object in the photo?"
+      },
+      {
+        "role": "assistant",
+        "content": "A building facade takes up most of the frame."
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  }
+]

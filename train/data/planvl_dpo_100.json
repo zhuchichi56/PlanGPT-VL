@@ -1,0 +1,1902 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "图中包含道路与建筑的规划布局，结构清晰。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一片海洋，没有任何规划信息。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图展示了哪些主要元素？"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "主要元素包括道路网络与建筑分区。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是一张人物合影，没有城市元素。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中空间布局。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "布局较为规整，建筑沿道路分布。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "画面全是文字说明，没有图形。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中的道路结构。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "道路呈网状或环状连接各区域。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "图中是一只动物，与规划无关。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的建筑分布。"
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "建筑分布在道路两侧，空间组织合理。"
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "这是夜空星图，不是规划图。"
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  }
+]

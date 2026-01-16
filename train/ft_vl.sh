@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
 export MASTER_ADDR="localhost"
 export MASTER_PORT="1231"
 
@@ -34,7 +36,7 @@ done
 # Set default values if not provided
 MODEL_NAME_OR_PATH=${MODEL_NAME_OR_PATH:-"qwen/Qwen2-VL-7B-Instruct"}
 DATASET=${DATASET:-"review_mllm"}
-OUTPUT_DIR=${OUTPUT_DIR:-"/share/home/tj24147/data/vlm/review_model_v1"}
+OUTPUT_DIR=${OUTPUT_DIR:-"/home/aiscuser/PlanGPT-VL/train/outputs/review_model_v1"}
 TEMPLATE=${TEMPLATE:-"qwen2_vl"}
 DEVICE=${DEVICE:-"0,1,2,3"}
 
@@ -56,8 +58,6 @@ echo "DATASET: $DATASET"
 echo "OUTPUT_DIR: $OUTPUT_DIR"
 echo "TEMPLATE: $TEMPLATE"
 echo "DEVICE: $DEVICE"
-
-
 
 # ### model
 # model_name_or_path: /share/home/u24147/.cache/modelscope/hub/models/Qwen/Qwen2-VL-7B-Instruct
@@ -109,13 +109,14 @@ echo "DEVICE: $DEVICE"
 torchrun --nnodes 1 --node_rank 0 --nproc_per_node $num_processes \
     --master_addr $MASTER_ADDR \
     --master_port $port \
-    src/llamafactory/launcher.py \
-        --deepspeed examples/deepspeed/ds_z3_config.json \
+    "$SCRIPT_DIR/src/llamafactory/launcher.py" \
+        --deepspeed "$SCRIPT_DIR/examples/deepspeed/ds_z3_config.json" \
         --stage sft \
         --model_name_or_path $MODEL_NAME_OR_PATH \
         --trust_remote_code true \
         --do_train \
         --dataset $DATASET \
+        --dataset_dir "$SCRIPT_DIR/data" \
         --template $TEMPLATE \
         --finetuning_type full \
         --output_dir $OUTPUT_DIR \
@@ -140,7 +141,7 @@ torchrun --nnodes 1 --node_rank 0 --nproc_per_node $num_processes \
         --eval_strategy "no" \
         --freeze_vision_tower true \
         --freeze_multi_modal_projector true \
-        --freeze_language_model false 
+        --freeze_language_model false
          # --freeze_vision_tower true \
         # --freeze_multi_modal_projector false \
         # --freeze_language_model false \

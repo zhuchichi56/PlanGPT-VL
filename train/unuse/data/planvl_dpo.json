@@ -1,0 +1,40 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>Summarize the scene briefly."
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "A street view with cars and buildings in the background."
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "The image is completely blank."
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>Identify the main subject."
+      }
+    ],
+    "chosen": {
+      "role": "assistant",
+      "content": "A building facade dominates the frame."
+    },
+    "rejected": {
+      "role": "assistant",
+      "content": "It shows a swimming pool."
+    },
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  }
+]

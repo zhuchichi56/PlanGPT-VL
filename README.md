@@ -107,29 +107,14 @@ src/
 │   ├── prompts.py      # All prompt templates (preserved exactly)
 │   └── config.py       # Configuration management
 │
-├── common/             # Shared Utilities
-│   ├── io_utils.py     # JSON/JSONLINES I/O
-│   ├── image_utils.py  # Image processing
-│   ├── text_utils.py   # Text parsing
-│   └── inference_utils.py  # Batch inference with checkpoints
+├── tools/              # Shared Utilities & CLI
+│   ├── utils.py        # JSON/JSONLINES I/O, image, text helpers
+│   ├── inference_utils.py  # Batch inference with checkpoints
+│   ├── filtering.py    # Planning map + resolution filtering
+│   ├── postprocessor.py # Dataset statistics & visualization
+│   └── run_pipeline.py # Unified entry point
 │
-├── data_processing/    # Data Generation
-│   ├── question_generator.py   # Question generation
-│   ├── response_generator.py   # Response generation
-│   └── cpt_generator.py        # Critical Point Thinking
-│
-├── filtering/          # Image Filtering
-│   ├── planning_map_filter.py  # Planning map detection
-│   └── resolution_filter.py    # Resolution-based filtering
-│
-├── analysis/           # Analysis & Post-processing
-│   ├── postprocessor.py    # Dataset statistics & visualization
-│   └── caption_refiner.py  # RLAIF-V caption refinement
-│
-└── scripts/            # Entry Point Scripts
-    ├── generate_questions.py
-    ├── generate_responses.py
-    └── filter_images.py
+├── pipeline.py         # Data synthesis pipeline (questions/responses/CPT/RLAIF-V)
 ```
 
 ### 3️⃣ Usage Examples
@@ -159,53 +144,33 @@ export VLLM_MODEL=/path/to/Qwen2.5-VL-32B-Instruct
 export VLLM_API_BASE=http://localhost:8000/v1
 ```
 
-#### Generate Questions
+#### Run Unified Pipeline
 
 ```bash
 cd src
-python -m scripts.generate_questions \
+python -m tools.run_pipeline \
   --image_dir /path/to/planning_maps \
-  --output questions.json \
-  --batch_size 200
-```
-
-#### Generate Responses
-
-```bash
-cd src
-python -m scripts.generate_responses \
-  --input questions.json \
-  --output responses.json \
-  --mode direct_cpt \
-  --batch_size 200
-```
-
-#### Filter Planning Maps
-
-```bash
-cd src
-python -m scripts.filter_images \
-  --input_dir /path/to/images \
-  --output filtered_results.json \
-  --batch_size 500
+  --output_dir /path/to/output \
+  --filter_images \
+  --response_mode direct_cpt
 ```
 
 #### Programmatic Usage
 
 ```python
 # Question Generation
-from data_processing import generate_questions
-from common import process_image_directory
+from pipeline import generate_questions
+from tools.utils import process_image_directory
 
 image_paths = process_image_directory("/path/to/images")
-questions = generate_questions(image_paths, batch_size=200)
+questions = generate_questions(image_paths)
 
 # Response Generation
-from data_processing import generate_responses
+from pipeline import generate_responses
 responses = generate_responses(questions, mode="direct_cpt")
 
 # Filtering
-from filtering import filter_planning_maps
+from tools.filtering import filter_planning_maps
 results = filter_planning_maps(image_paths)
 ```
 

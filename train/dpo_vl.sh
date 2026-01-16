@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
 export MASTER_ADDR="localhost"
 export MASTER_PORT="1231"
 
@@ -54,7 +56,7 @@ done
 # Set default values if not provided
 MODEL_NAME_OR_PATH=${MODEL_NAME_OR_PATH:-"qwen/Qwen2.5-VL-7B-Instruct"}
 DATASET=${DATASET:-"rlhf_v"}
-OUTPUT_DIR=${OUTPUT_DIR:-"saves/qwen2_vl-7b/lora/dpo"}
+OUTPUT_DIR=${OUTPUT_DIR:-"/home/aiscuser/PlanGPT-VL/train/outputs/qwen2_vl-7b/dpo"}
 TEMPLATE=${TEMPLATE:-"qwen2_vl"}
 DEVICE=${DEVICE:-"0,1,2,3"}
 FINETUNING_TYPE=${FINETUNING_TYPE:-"full"}  # 默认为lora，可选值: full, lora
@@ -96,13 +98,14 @@ fi
 torchrun --nnodes 1 --node_rank 0 --nproc_per_node $num_processes \
     --master_addr $MASTER_ADDR \
     --master_port $port \
-    src/llamafactory/launcher.py \
-        --deepspeed examples/deepspeed/ds_z3_config.json \
+    "$SCRIPT_DIR/src/llamafactory/launcher.py" \
+        --deepspeed "$SCRIPT_DIR/examples/deepspeed/ds_z3_config.json" \
         --stage dpo \
         --model_name_or_path $MODEL_NAME_OR_PATH \
         --trust_remote_code true \
         --do_train \
         --dataset $DATASET \
+        --dataset_dir "$SCRIPT_DIR/data" \
         --template $TEMPLATE \
         --finetuning_type $FINETUNING_TYPE \
         $LORA_PARAMS \
@@ -114,7 +117,7 @@ torchrun --nnodes 1 --node_rank 0 --nproc_per_node $num_processes \
         --image_max_pixels 262144 \
         --video_max_pixels 16384 \
         --learning_rate 5e-6 \
-        --num_train_epochs 1 \
+        --num_train_epochs 3 \
         --logging_steps 10 \
         --lr_scheduler_type cosine \
         --bf16 true \

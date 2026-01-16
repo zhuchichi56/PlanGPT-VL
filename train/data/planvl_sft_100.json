@@ -1,0 +1,1502 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/08-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/10-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/14-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/18-1.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请简要描述这张规划图的主要内容。"
+      },
+      {
+        "role": "assistant",
+        "content": "图中展示了道路与建筑分布，呈现城市街区结构。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/19-4.png"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请指出图中最显眼的区域或结构。"
+      },
+      {
+        "role": "assistant",
+        "content": "中心区域更醒目，周边为配套道路与建筑。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ107.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>这张图里展示了哪些空间要素？"
+      },
+      {
+        "role": "assistant",
+        "content": "包含道路、建筑与空地等要素，布局清晰。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ109.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请概括图中的道路与建筑布局。"
+      },
+      {
+        "role": "assistant",
+        "content": "道路成网格或环状分布，建筑沿路布置。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/BJ110.jpeg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>请描述图面中的整体布局特征。"
+      },
+      {
+        "role": "assistant",
+        "content": "整体布局规整，空间组织有层次。"
+      }
+    ],
+    "images": [
+      "/home/aiscuser/PlanGPT-VL/data/JS39.png"
+    ]
+  }
+]
