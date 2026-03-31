@@ -1,0 +1,10 @@
+### Merge LoRA adapter into base model
+### Usage: uv run llamafactory-cli export train/configs/qwen35_merge.yaml
+
+model_name_or_path: ${MODEL_DIR}/Qwen3.5-9B  # Replace with your model path
+adapter_name_or_path: outputs/qwen35-9b-sft
+template: qwen3_5
+finetuning_type: lora
+export_dir: outputs/qwen35-9b-sft/merged
+export_size: 4
+export_legacy_format: false

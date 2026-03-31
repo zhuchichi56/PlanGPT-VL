@@ -1,0 +1,49 @@
+### LlamaFactory SFT config: Qwen2-VL-7B + Thinking-in-Image
+### Usage: uv run llamafactory-cli train train/configs/qwen2vl_sft.yaml
+
+model_name_or_path: ${MODEL_DIR}/Qwen2-VL-7B-Instruct  # Replace with your model path
+template: qwen2_vl
+
+### Method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_target: all
+
+### Dataset
+dataset_dir: train/data
+dataset: thinking_in_image_1k
+preprocessing_num_workers: 8
+
+### Output
+output_dir: outputs/qwen2vl7b-sft
+logging_dir: outputs/qwen2vl7b-sft/logs
+overwrite_output_dir: true
+
+### Training hyperparams
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+num_train_epochs: 3
+learning_rate: 1.0e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+max_grad_norm: 1.0
+
+### Precision & memory
+bf16: true
+gradient_checkpointing: true
+freeze_vision_tower: true
+
+### Logging
+logging_steps: 10
+save_strategy: steps
+save_steps: 100
+save_total_limit: 2
+report_to: none
+
+### Misc
+seed: 42
+dataloader_num_workers: 4
+cutoff_len: 4096

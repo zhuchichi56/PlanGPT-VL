@@ -1,0 +1,11 @@
+{
+    "gpt-4o": [
+        {"endpoint": "https://YOUR_RESOURCE_1.openai.azure.com/", "speed": 150, "model": "gpt-4o"},
+        {"endpoint": "https://YOUR_RESOURCE_2.openai.azure.com/", "speed": 150, "model": "gpt-4o"},
+        {"endpoint": "https://YOUR_RESOURCE_1.openai.azure.com/", "speed": 450, "model": "gpt-4o-global"}
+    ],
+    "gpt-4o-mini": [
+        {"endpoint": "https://YOUR_RESOURCE_1.openai.azure.com/", "speed": 150, "model": "gpt-4o-mini"},
+        {"endpoint": "https://YOUR_RESOURCE_2.openai.azure.com/", "speed": 150, "model": "gpt-4o-mini"}
+    ]
+}

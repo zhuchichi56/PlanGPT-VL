@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# uv
+uv.lock
+
+# Model outputs (too large for git)
+outputs/
+
+# Data files (synthesized data, eval results)
+data/
+src/eval/planbench_results/
+src/eval/test_results*.json
+train/data/thinking_in_image*.json
+
+# Thinking-in-Image (not public)
+src/thinking_in_image/
+
+# Logs
+logs/
+*.log
+
+# Claude internal
+.claude/

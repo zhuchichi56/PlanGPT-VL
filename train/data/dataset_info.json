@@ -1,0 +1,17 @@
+{
+  "thinking_in_image_1k": {
+    "file_name": "thinking_in_image_1k.json",
+    "formatting": "openai",
+    "columns": {
+      "messages": "messages",
+      "images": "images"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  }
+}
